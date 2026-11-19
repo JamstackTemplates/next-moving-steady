@@ -1,65 +1,126 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Depot daylight (light) */
 :root {
-  --bg: #f7f8fa;
-  --surface: #ffffff;
-  --text: #172033;
-  --muted: #526078;
-  --accent: #2457a7;
-  --accent-ink: #2457a7;
+  --bg: #f5ede0;
+  --surface: #fffbf4;
+  --text: #1e1915;
+  --muted: #5e5348;
+  --line: #d6c6ae;
+  --accent: #c2410c;
+  --accent-hover: #9a3412;
+  --accent-ink: #b13a0a;
   --on-accent: #ffffff;
-  --line: #c7cfdb;
-  --focus: #2457a7;
+  --kraft: #c99a62;
+  --kraft-soft: #e8d3b4;
+  --tape: #cfa25b;
+  --teal: #1f6e73;
+  --teal-deep: #154e52;
+  --road: #2a2522;
+  --road-ink: #f3e9da;
+  --road-muted: #c8bba9;
+  --headlight: #ffd9a0;
+  --focus: #c2410c;
+  --sky-top: #e7dec9;
+  --sky-bottom: #f5ede0;
+  --night-glow: 0;
+  --grain-opacity: 0.09;
   --map-filter: none;
   color-scheme: light;
 }
+
+/* Night run (automatic dark) */
 @media (prefers-color-scheme: dark) {
- :root:not(.light) {
-  --bg: #141923;
-  --surface: #1e2633;
-  --text: #f1f5fa;
-  --muted: #b5c2d5;
-  --accent: #2457a7;
-  --accent-ink: #a9cbff;
-  --on-accent: #ffffff;
-  --line: #61708a;
-  --focus: #a9cbff;
-  --map-filter: grayscale(.4) brightness(.8);
-  color-scheme: dark;
- }
+  :root:not(.light) {
+    --bg: #15110e;
+    --surface: #201a15;
+    --text: #f3e9da;
+    --muted: #bcae9c;
+    --line: #3a3027;
+    --accent: #c2410c;
+    --accent-hover: #a8360a;
+    --accent-ink: #ff8a4c;
+    --on-accent: #ffffff;
+    --kraft: #8a6740;
+    --kraft-soft: #3a2c1f;
+    --tape: #b98e4e;
+    --teal: #5bb0b3;
+    --teal-deep: #173d40;
+    --road: #0d0a08;
+    --road-ink: #f3e9da;
+    --road-muted: #bcae9c;
+    --headlight: #ffd9a0;
+    --focus: #ff8a4c;
+    --sky-top: #171a29;
+    --sky-bottom: #2c231e;
+    --night-glow: 1;
+    --grain-opacity: 0.14;
+    --map-filter: grayscale(0.3) brightness(0.8);
+    color-scheme: dark;
+  }
 }
+
+/* Night run (explicit dark) */
 :root.dark {
-  --bg: #141923;
-  --surface: #1e2633;
-  --text: #f1f5fa;
-  --muted: #b5c2d5;
-  --accent: #2457a7;
-  --accent-ink: #a9cbff;
+  --bg: #15110e;
+  --surface: #201a15;
+  --text: #f3e9da;
+  --muted: #bcae9c;
+  --line: #3a3027;
+  --accent: #c2410c;
+  --accent-hover: #a8360a;
+  --accent-ink: #ff8a4c;
   --on-accent: #ffffff;
-  --line: #61708a;
-  --focus: #a9cbff;
-  --map-filter: grayscale(.4) brightness(.8);
+  --kraft: #8a6740;
+  --kraft-soft: #3a2c1f;
+  --tape: #b98e4e;
+  --teal: #5bb0b3;
+  --teal-deep: #173d40;
+  --road: #0d0a08;
+  --road-ink: #f3e9da;
+  --road-muted: #bcae9c;
+  --headlight: #ffd9a0;
+  --focus: #ff8a4c;
+  --sky-top: #171a29;
+  --sky-bottom: #2c231e;
+  --night-glow: 1;
+  --grain-opacity: 0.14;
+  --map-filter: grayscale(0.3) brightness(0.8);
   color-scheme: dark;
 }
 
 @theme {
   --color-*: initial;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --radius-ui: .375rem;
+  --font-display: 'Anton', Impact, 'Arial Narrow', sans-serif;
+  --font-sans: 'Hanken Grotesk Variable', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-marker: 'Permanent Marker', 'Comic Sans MS', cursive;
+  --radius-ui: 0.1875rem;
 }
+
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-ink: var(--text);
   --color-muted: var(--muted);
+  --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-ink: var(--accent-ink);
   --color-on-accent: var(--on-accent);
-  --color-line: var(--line);
+  --color-kraft: var(--kraft);
+  --color-kraft-soft: var(--kraft-soft);
+  --color-tape: var(--tape);
+  --color-teal: var(--teal);
+  --color-teal-deep: var(--teal-deep);
+  --color-road: var(--road);
+  --color-road-ink: var(--road-ink);
+  --color-road-muted: var(--road-muted);
+  --color-headlight: var(--headlight);
 }
+
 :root {
-  --measure: 42rem;
+  --measure: 44rem;
   --jamstacks-font-family: var(--font-sans);
   --jamstacks-color-text: var(--text);
   --jamstacks-color-background: var(--surface);
@@ -71,42 +132,541 @@
   --jamstacks-control-height: 2.75rem;
   --jamstacks-spacing: 1rem;
   --jamstacks-form-max-width: 40rem;
-  --jamstacks-toggle-color: var(--text);
-  --jamstacks-toggle-dark-color: var(--text);
-  --jamstacks-toggle-border: var(--line);
-  --jamstacks-toggle-background: var(--surface);
-  --jamstacks-toggle-dark-background: var(--surface);
-  --jamstacks-toggle-focus-color: var(--focus);
+  /* DarkModeToggle sits on the dark road-charcoal header bar */
+  --jamstacks-toggle-color: #f3e9da;
+  --jamstacks-toggle-dark-color: #f3e9da;
+  --jamstacks-toggle-border: #5a4e45;
+  --jamstacks-toggle-background: #3a322d;
+  --jamstacks-toggle-dark-background: #221c18;
+  --jamstacks-toggle-focus-color: #ff8a4c;
 }
+
 @layer base {
-  html { background: var(--bg); color: var(--text); font-family: var(--font-sans); scroll-padding-top: 1.5rem; }
-  body { margin: 0; line-height: 1.6; }
-  main { min-height: 65vh; }
-  a { text-underline-offset: .2em; }
-  a:hover { text-decoration: underline; }
-  button { cursor: pointer; }
-  :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-  [aria-current="page"] { text-decoration: underline; }
+  html {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    accent-color: var(--accent);
+    scroll-padding-top: 5.5rem;
+    overflow-x: clip;
+  }
+
+  body {
+    margin: 0;
+    line-height: 1.55;
+    overflow-x: clip;
+  }
+
+  main {
+    min-height: 65vh;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
 }
-@utility wrap { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+
+@utility wrap {
+  width: min(100% - 2rem, 76rem);
+  margin-inline: auto;
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@utility font-marker {
+  font-family: var(--font-marker);
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   Truck livery, kraft carton, tape, roller-door & blanket textures
+   ========================================================================== */
+
 @layer components {
-  .button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: .6rem 1.2rem; border: 1px solid var(--accent); border-radius: var(--radius-ui); background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
-  .button:hover { text-decoration: underline; }
-  .button-quiet { background: var(--surface); color: var(--accent-ink); border-color: var(--line); }
-  .text-link { color: var(--accent-ink); text-decoration: underline; }
-  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-  .skip-link { position: absolute; left: 1rem; top: -8rem; padding: .75rem; z-index: 200; background: var(--surface); }
-  .skip-link:focus { top: 1rem; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.85rem;
+    padding: 0.65rem 1.35rem;
+    border: 2.5px solid var(--text);
+    border-radius: var(--radius-ui);
+    background: var(--accent);
+    color: var(--on-accent);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 var(--road);
+    transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+  }
+
+  .button:hover {
+    background: var(--accent-hover);
+    text-decoration: none;
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 var(--road);
+  }
+
+  .button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--road);
+  }
+
+  .button-quiet {
+    background: var(--surface);
+    color: var(--text);
+    border: 2.5px solid var(--text);
+    box-shadow: 4px 4px 0 var(--road);
+  }
+
+  .button-quiet:hover {
+    background: var(--kraft-soft);
+    color: var(--text);
+  }
+
+  .button-on-dark {
+    background: var(--accent);
+    color: var(--on-accent);
+    border: 2px solid #f3e9da;
+    box-shadow: 3px 3px 0 #000000;
+  }
+
+  .button-on-dark:hover {
+    background: var(--accent-hover);
+  }
+
+  .button-white {
+    background: #fffbf4;
+    color: #1e1915;
+    border: 2.5px solid #1e1915;
+    box-shadow: 4px 4px 0 #1e1915;
+  }
+
+  .button-white:hover {
+    background: #e8d3b4;
+    color: #1e1915;
+  }
+
+  .text-link {
+    color: var(--accent-ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -8rem;
+    padding: 0.75rem 1rem;
+    z-index: 200;
+    background: var(--accent);
+    color: var(--on-accent);
+    border: 2px solid var(--on-accent);
+    font-weight: 700;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  /* Kraft carton panel with corrugated flute bottom edge and subtle fibre grain */
+  .carton-panel {
+    position: relative;
+    background-color: var(--kraft-soft);
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 11px,
+        color-mix(in srgb, var(--kraft) 14%, transparent) 11px 12px
+      ),
+      radial-gradient(color-mix(in srgb, var(--text) 6%, transparent) 1px, transparent 1px);
+    background-size: 12px 100%, 7px 7px;
+    border: 2.5px solid var(--text);
+    box-shadow: 5px 5px 0 var(--road);
+  }
+
+  .carton-surface {
+    position: relative;
+    background-color: var(--surface);
+    border: 2.5px solid var(--text);
+    box-shadow: 5px 5px 0 var(--road);
+  }
+
+  .corrugated-bottom {
+    border-bottom: 0;
+    padding-bottom: calc(1.25rem + 9px);
+  }
+
+  .corrugated-bottom::after {
+    content: '';
+    position: absolute;
+    left: -2.5px;
+    right: -2.5px;
+    bottom: -2.5px;
+    height: 11px;
+    border-top: 2px solid var(--text);
+    border-bottom: 2.5px solid var(--text);
+    border-left: 2.5px solid var(--text);
+    border-right: 2.5px solid var(--text);
+    background:
+      repeating-linear-gradient(
+        90deg,
+        var(--kraft) 0 5px,
+        color-mix(in srgb, var(--road) 55%, var(--kraft)) 5px 7px,
+        var(--kraft-soft) 7px 11px,
+        color-mix(in srgb, var(--road) 40%, var(--kraft)) 11px 13px
+      );
+    pointer-events: none;
+  }
+
+  /* Tan packing tape strip with torn zigzag ends */
+  .tape-strip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tape);
+    color: #1e1915;
+    padding: 0.2rem 1.15rem;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    clip-path: polygon(
+      0% 0%, 4% 25%, 0% 50%, 4% 75%, 0% 100%,
+      100% 100%, 96% 75%, 100% 50%, 96% 25%, 100% 0%
+    );
+    box-shadow: 0 2px 0 color-mix(in srgb, var(--road) 35%, transparent);
+  }
+
+  /* Roller-door ribbed texture for the truck-back footer */
+  .roller-door {
+    background-color: var(--road);
+    background-image: repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.045) 0 2px,
+      transparent 2px 16px,
+      rgba(0, 0, 0, 0.28) 16px 19px
+    );
+    color: var(--road-ink);
+  }
+
+  /* Teal quilted furniture blanket pattern */
+  .blanket-quilted {
+    background-color: var(--teal-deep);
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.08) 0 1px,
+        transparent 1px 22px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.08) 0 1px,
+        transparent 1px 22px
+      );
+    color: #f3e9da;
+  }
+
+  /* Road asphalt band with subtle lane marks */
+  .road-band {
+    background-color: var(--road);
+    background-image:
+      radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 1px);
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    color: var(--road-ink);
+  }
+
+  /* Orange livery band with subtle angled 12deg stripe sheen */
+  .livery-band {
+    background-color: var(--accent);
+    background-image: repeating-linear-gradient(
+      -12deg,
+      transparent 0 42px,
+      rgba(0, 0, 0, 0.06) 42px 58px
+    );
+    color: var(--on-accent);
+  }
+
+  /* Stamped-metal vehicle compliance plate */
+  .rivet-plate {
+    position: relative;
+    background-color: var(--surface);
+    background-image: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--kraft-soft) 30%, var(--surface)) 0%,
+      var(--surface) 50%,
+      color-mix(in srgb, var(--line) 30%, var(--surface)) 100%
+    );
+    border: 2.5px solid var(--text);
+    box-shadow: 5px 5px 0 var(--road);
+  }
+
+  /* Dispatch docket with torn bottom edge */
+  .docket-torn {
+    position: relative;
+    background: var(--surface);
+    border: 2.5px solid var(--text);
+    border-bottom: 0;
+    padding-bottom: 1.75rem;
+    box-shadow: 5px 0 0 var(--road);
+  }
+
+  .docket-torn::after {
+    content: '';
+    position: absolute;
+    left: -2.5px;
+    right: -2.5px;
+    bottom: -12px;
+    height: 14px;
+    background:
+      linear-gradient(135deg, var(--surface) 50%, transparent 50%) -8px 0 / 16px 16px repeat-x,
+      linear-gradient(225deg, var(--surface) 50%, transparent 50%) -8px 0 / 16px 16px repeat-x;
+    filter: drop-shadow(0 2.5px 0 var(--text));
+  }
+
+  /* Responsive data table with @container query */
+  .table-wrap {
+    overflow-x: auto;
+    max-inline-size: 100%;
+    container-type: inline-size;
+  }
+
+  .steady-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .steady-table th,
+  .steady-table td {
+    padding: 0.8rem 0.9rem;
+    text-align: left;
+    border-bottom: 1.5px solid var(--line);
+  }
+
+  .steady-table thead th {
+    background: var(--road);
+    color: var(--road-ink);
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 2.5px solid var(--accent);
+  }
+
+  .steady-table tbody th {
+    font-weight: 700;
+  }
+
+  @container (width < 560px) {
+    .steady-table-stack,
+    .steady-table-stack thead,
+    .steady-table-stack tbody,
+    .steady-table-stack tr,
+    .steady-table-stack th,
+    .steady-table-stack td {
+      display: block;
+    }
+
+    .steady-table-stack thead {
+      display: none;
+    }
+
+    .steady-table-stack tr {
+      margin-block-end: 0.9rem;
+      border: 2px solid var(--text);
+      background: var(--surface);
+      padding: 0.35rem 0;
+    }
+
+    .steady-table-stack tbody th {
+      background: var(--kraft-soft);
+      border-bottom: 2px solid var(--text);
+      padding: 0.65rem 0.85rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+    }
+
+    .steady-table-stack td {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding: 0.5rem 0.85rem;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .steady-table-stack td:last-child {
+      border-bottom: 0;
+    }
+
+    .steady-table-stack td::before {
+      content: attr(data-label);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+  }
 }
-.map iframe { width: 100%; min-height: 20rem; border: 0; filter: var(--map-filter); }
-.enquiry__host { display: block; }
-.enquiry__status { margin-top: 1rem; color: var(--muted); }
-.enquiry[data-state="present"] > .enquiry__status { display: none; }
+
+/* ==========================================================================
+   Purposeful motion (all disabled under prefers-reduced-motion)
+   ========================================================================== */
+
+@keyframes stripeSlideIn {
+  from {
+    transform: translateX(-28%);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cartonDrop {
+  from {
+    transform: translateY(-7px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes wheelTurn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.livery-stripe-enter {
+  animation: stripeSlideIn 550ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cargo-item-drop {
+  animation: cartonDrop 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Hero truck wheels turn when the visitor hovers the primary CTA */
+.hero-scene-root:has(.hero-primary-cta:hover) .hero-wheel {
+  animation: wheelTurn 1.6s linear infinite;
+}
+
+/* Dark-mode night-glow elements inside bespoke SVGs */
+.night-only {
+  opacity: var(--night-glow);
+  transition: opacity 250ms ease;
+}
+
+.day-only {
+  opacity: calc(1 - var(--night-glow));
+  transition: opacity 250ms ease;
+}
+
+/* Jamstacks hosted form states */
+.enquiry__host {
+  display: block;
+}
+.enquiry__status {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+.enquiry[data-state='present'] > .enquiry__status {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
+
+/* Print styles: clean printable moving checklist and first-night box */
 @media print {
-  nav, .skip-link, .enquiry, button { display: none !important; }
-  html { background: white; color: black; }
-  a { color: inherit; }
+  header,
+  footer,
+  nav,
+  .skip-link,
+  .enquiry,
+  .no-print,
+  button {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .carton-panel,
+  .carton-surface,
+  .rivet-plate,
+  .docket-torn {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border-color: #222222 !important;
+  }
+
+  .corrugated-bottom::after,
+  .docket-torn::after {
+    display: none !important;
+  }
+
+  .print-checkbox {
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .print-checkbox svg {
+    display: none !important;
+  }
+
+  .print-task-done {
+    text-decoration: none !important;
+    color: #000000 !important;
+    opacity: 1 !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }

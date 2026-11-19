@@ -1,0 +1,22 @@
+{
+  "templateId": "next-moving-steady",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "captures": [
+    {
+      "mode": "light",
+      "sha256": "0a577ea2de9c3037f64db59fdd0dc62d900e40b3e85373e8ee9e13a68502eb88",
+      "file": "jamstacks/home-light.jpg",
+      "bytes": 126078
+    },
+    {
+      "mode": "dark",
+      "sha256": "752917403ef435e34c7ee97efd8382dbb67d60cf73d7da040c48ca056cd77cec",
+      "file": "jamstacks/home-dark.jpg",
+      "bytes": 131416
+    }
+  ]
+}

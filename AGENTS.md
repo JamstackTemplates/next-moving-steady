@@ -65,6 +65,19 @@ export when changing the embed, base paths or canonical URLs. Check light/dark a
 widths and keyboard links. Add meaningful tests for behavior, including frequent owner edits. Report local checks
 separately from deployments or message delivery. Update README when owner-facing behavior changes.
 
+## File ownership (Deckhand Removals)
+
+- `content/business.ts`: shared business contact details, service area, office hours (`Australia/Brisbane`), enquiry disclaimer and message tips.
+- `content/trucks.ts`: fleet specs, `hourlyRate`, `inService` and derived `startingHourlyRate()`.
+- `content/home-sizes.ts`, `content/fits.ts`: truck picker load options and "What fits" counts referencing `trucks.ts`.
+- `content/routes.ts`: interstate weekly departures, transit windows and per-m³ rates.
+- `content/services.ts`: derived move types, packing services and extras/fees.
+- `content/supplies.ts`: depot shelf cartons/rolls, prices and `inStock` flags.
+- `content/checklist.ts`: moving checklist groups, tasks and `firstNightBox`.
+- `app/**/page.tsx`: route-specific copy as JSX children of named components (`components/home-sections.tsx`, `components/page-head.tsx`, `components/truck-picker.tsx`, `components/moving-checklist.tsx`).
+- `components/artwork/*`: bespoke inline SVG art, dividers and matching icons.
+- `app/tailwind.input.css`: light ("Depot daylight") & dark ("Night run") tokens, textures, responsive tables, motion and print styles.
+
 ## Template publishing assets
 
 The entire jamstacks/ folder is source-gallery-only and removable. Customer code, normal tests, builds
@@ -72,3 +85,13 @@ and Pages never import/read it. Keep site.config.json, the form and workflow out
 light/dark captures after a fresh normal build and run node --test jamstacks/config.test.mjs separately.
 Each new template needs its own business-led layout/fonts/art and OG image; do not ship the neutral
 starter as a final design. Remove `plan/` and `.claude/skills/` before publishing a gallery template once reviewed.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

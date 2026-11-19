@@ -1,0 +1,19 @@
+{
+  "name": "Steady removalist",
+  "description": "A bold truck-orange and kraft-cardboard theme for removalists and moving companies: home, office and interstate moves with hourly truck rates, a truck size guide that loads cartons into the right truck for your home, packing services and box supplies, an interstate route board, a printable tick-off moving checklist, office hours and a Jamstacks contact component for quote enquiries.",
+  "tech": "next",
+  "type": "moving",
+  "style": "steady",
+  "internal": false,
+  "components": [
+    "support-form"
+  ],
+  "configFile": "site.config.json",
+  "screenshots": {
+    "light": "jamstacks/home-light.jpg",
+    "dark": "jamstacks/home-dark.jpg",
+    "theme": {
+      "strategy": "media"
+    }
+  }
+}
